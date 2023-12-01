@@ -17,7 +17,6 @@ const SearchForm = (props) => {
       type: 'UPDATE_SEARCHSTRING',
       payload: value,
     });*/
-    setValue('');
   };
   return (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
