@@ -3,7 +3,7 @@ import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { updateSearchString } from '../../redux/store';
 
 const SearchForm = (props) => {
   const dispatch = useDispatch();
@@ -12,10 +12,11 @@ const SearchForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({
+    dispatch(updateSearchString({ value }));
+    /*dispatch({
       type: 'UPDATE_SEARCHSTRING',
       payload: value,
-    });
+    });*/
     setValue('');
   };
   return (
