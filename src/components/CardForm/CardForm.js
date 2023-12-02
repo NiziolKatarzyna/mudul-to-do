@@ -2,17 +2,17 @@ import styles from './CardForm.module.scss';
 import { useState } from 'react';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addCard } from '../../redux/store';
 
 const CardForm = (props) => {
   const dispatch = useDispatch();
-  //stan o wartości pustego stringa, dostęp pod stałą value, funkcja modyfikacjji pod stałą setValue
+
   const [title, setTitle] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addCard({ title }, props.columnId));
+    dispatch(addCard({ title, columnId: props.columnId }));
 
     /*dispatch({
       type: 'ADD_CARD',

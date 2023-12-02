@@ -13,10 +13,9 @@ export const getAllColumns = (state) => state.columns;
 // action creators
 export const addColumn = (payload) => ({ type: 'ADD_COLUMN', payload });
 
-export const addCard = (payload, columnId) => ({
+export const addCard = (payload) => ({
   type: 'ADD_CARD',
   payload,
-  columnId,
 });
 export const updateSearchString = (payload) => ({
   type: 'UPDATE_SEARCHSTRING',
@@ -33,10 +32,7 @@ const reducer = (state, action) => {
     case 'ADD_CARD':
       return {
         ...state,
-        cards: [
-          ...state.cards,
-          { ...action.payload, columnId: action.columnId, id: shortid() },
-        ],
+        cards: [...state.cards, { ...action.payload, id: shortid() }],
       };
     case 'UPDATE_SEARCHSTRING':
       return {
