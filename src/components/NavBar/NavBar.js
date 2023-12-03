@@ -1,24 +1,25 @@
 import styles from './NavBar.module.scss';
+import { Link } from 'react-router-dom';
 const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.row}>
-        <a href='/' className={`${styles.icon} fa fa-tasks`}></a>
+        <Link to='/' className={`${styles.icon} fa fa-tasks`} />
         <ul className={styles.list}>
           <li className={styles.col}>
-            <a className={styles.link} href='/'>
+            <Link to='/' className={styles.link}>
               Home
-            </a>
+            </Link>
           </li>
           <li className={styles.col}>
-            <a className={styles.link} href='/favorite'>
+            <Link to='/favorite' className={styles.link}>
               Favorite
-            </a>
+            </Link>
           </li>
           <li className={styles.col}>
-            <a className={styles.link} href='/about'>
+            <Link to='/about' className={styles.link}>
               About
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
