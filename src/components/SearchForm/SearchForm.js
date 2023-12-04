@@ -4,11 +4,15 @@ import Button from '../Button/Button';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateSearchString } from '../../redux/store';
+import { useEffect } from 'react';
 
 const SearchForm = (props) => {
   const dispatch = useDispatch();
 
   const [value, setValue] = useState(props.value);
+  useEffect(() => {
+    dispatch(updateSearchString({ value: '' }));
+  }, [dispatch]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,6 +22,7 @@ const SearchForm = (props) => {
       payload: value,
     });*/
   };
+
   return (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
       <TextInput
