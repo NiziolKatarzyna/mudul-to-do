@@ -8,6 +8,7 @@ export const getListById = ({ lists }, listId) =>
 
 export const getColumnsByList = ({ columns }, listId) =>
   columns.filter((column) => column.listId === listId);
+export const getAllLists = (state) => state.lists;
 
 export const getFilteredCards = ({ cards, searchString }, columnId) =>
   cards.filter(
