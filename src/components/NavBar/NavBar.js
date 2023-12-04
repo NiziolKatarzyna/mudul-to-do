@@ -1,5 +1,6 @@
 import styles from './NavBar.module.scss';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 const NavBar = () => {
   return (
     <nav className={styles.nav}>
@@ -7,19 +8,34 @@ const NavBar = () => {
         <Link to='/' className={`${styles.icon} fa fa-tasks`} />
         <ul className={styles.list}>
           <li className={styles.col}>
-            <Link to='/' className={styles.link}>
+            <NavLink
+              className={({ isActive }) =>
+                `${styles.link} ${isActive ? styles.linkActive : undefined}`
+              }
+              to='/'
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.col}>
-            <Link to='/favorite' className={styles.link}>
+            <NavLink
+              className={({ isActive }) =>
+                `${styles.link} ${isActive ? styles.linkActive : undefined}`
+              }
+              to='/favorite'
+            >
               Favorite
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.col}>
-            <Link to='/about' className={styles.link}>
+            <NavLink
+              className={({ isActive }) =>
+                `${styles.link} ${isActive ? styles.linkActive : undefined}`
+              }
+              to='/about'
+            >
               About
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -3,6 +3,9 @@ import initialState from './initialState';
 import shortid from 'shortid';
 import { strContains } from '../utils/strContains';
 //selectors
+export const getListById = ({ lists }, listId) =>
+  lists.find((list) => list.id === listId);
+
 export const getFilteredCards = ({ cards, searchString }, columnId) =>
   cards.filter(
     (card) =>
