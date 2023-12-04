@@ -6,6 +6,9 @@ import { strContains } from '../utils/strContains';
 export const getListById = ({ lists }, listId) =>
   lists.find((list) => list.id === listId);
 
+export const getColumnsByList = ({ columns }, listId) =>
+  columns.filter((column) => column.listId === listId);
+
 export const getFilteredCards = ({ cards, searchString }, columnId) =>
   cards.filter(
     (card) =>
