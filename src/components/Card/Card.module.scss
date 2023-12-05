@@ -10,4 +10,15 @@
   display: flex;
   justify-content: space-between;
   font-weight: bold;
+
+  .icon {
+    color: $color-dark;
+    cursor: pointer;
+    background-color: $color-light;
+    border: $color-light;
+
+    &.isFavorite {
+      color: rgb(239, 239, 23);
+    }
+  }
 }
