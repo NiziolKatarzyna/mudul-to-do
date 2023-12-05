@@ -4,8 +4,6 @@ import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import { useDispatch } from 'react-redux';
 import { addColumn } from '../../redux/store';
-{
-}
 
 const ColumnForm = (props) => {
   const dispatch = useDispatch();
