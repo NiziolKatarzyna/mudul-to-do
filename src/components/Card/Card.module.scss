@@ -8,14 +8,18 @@
   margin: 0 0 $base-size 0;
   border-radius: $radius;
   display: flex;
-  justify-content: space-between;
   font-weight: bold;
-
+  flex-direction: row;
+  span {
+    width: 80%;
+  }
   .icon {
     color: $color-dark;
     cursor: pointer;
     background-color: $color-light;
     border: $color-light;
+    width: auto;
+    justify-content: end;
 
     &.isFavorite {
       color: rgb(239, 239, 23);
